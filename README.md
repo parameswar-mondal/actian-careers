@@ -35,9 +35,9 @@ Host: http://localhost:3000
 URL: http://localhost:3000/open-positions/{department}
 ```
 
-## Postman Success Call:
+## Postman Success Request:
 ![success message](./success.png)
 
-## Postman Fail Call:
+## Postman Failed Request:
 ![fail message](./fail.png)
 
