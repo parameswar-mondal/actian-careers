@@ -10,6 +10,7 @@ with appropriate http status code.
 ## Used technologies
 - Node.js (v18.15.0)
 - Express.js (v4.18.2)
+- OpenAPI/Swagger
 
 ## Used PORT
 Express Server running Port: ```3000```
@@ -22,7 +23,7 @@ Express Server running Port: ```3000```
 
 
 ## Endpoint URL
-`http://localhost:3000/open-positions/Engineering`
+`http://localhost:3000/api/open-positions?department=Engineering`
 
 
 ## Postman Endpoints
@@ -30,9 +31,9 @@ Express Server running Port: ```3000```
 ### Get the list of open positions for a depertment
 ```
 Method: GET
-Endpoint: /open-positions/{department}
+Endpoint: /api/open-positions?department={department}
 Host: http://localhost:3000
-URL: http://localhost:3000/open-positions/{department}
+URL: http://localhost:3000/api/open-positions?department={department}
 ```
 
 ## Postman Success Request:
@@ -41,3 +42,8 @@ URL: http://localhost:3000/open-positions/{department}
 ## Postman Failed Request:
 ![fail message](./fail.png)
 
+
+## OpenAPI/Swagger URL
+`http://localhost:3000/api-docs`
+
+![open api](./swagger.png)
