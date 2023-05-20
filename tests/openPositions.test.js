@@ -8,7 +8,8 @@ describe('Actian Careers API Integration Tests', async () => {
         supertest(app).get(`/api/open-positions?department=${config.department}`)
             .end((err, res) => {
                 expect(res.statusCode).to.equal(200);
-                expect(res.body).to.be.an('array');
+                expect(res.body).to.be.an('object');
+                expect(res.body).to.have.own.property('result');
                 expect(res.body).not.to.be.empty;
                 done();
             });
