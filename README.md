@@ -7,10 +7,12 @@ from https://www.actian.com/company/careers link.
 The http response content must contain a list of titles of open positions for a department 
 with appropriate http status code.
 
-## Used technologies
+## Used tools and technologies
 - Node.js (v18.15.0)
 - Express.js (v4.18.2)
-- OpenAPI/Swagger
+- OpenAPI/Swagger for open api documentation
+- mocha and chai for test cases
+- Istanbul, nyc (istanbul's successor) for code coverage report
 
 ## Used PORT
 Express Server running Port: ```3000```
@@ -53,7 +55,21 @@ Within the `tests` directory, we wrote the test cases for this application. Belo
 
 - Implemented one positive test case.
 - Implemented three negative test cases.
-### How to run the express server?
+### How to run the integration testing?
 `npm run test`
 
 ![integration test](./integration-test.png)
+
+## Code Coverage Report
+The coverage report will include information on the percentage of code covered, highlighting which lines were executed during the tests and which lines were not.
+
+### How to run the code coverage report?
+`npm run coverage`
+
+![code coverage](./codecoderage.png)
+
+### How the code coverage report looks like in the html web page:
+A new `coverage` directory will automatically be created inside of this application once the `npm run coverage` command has been executed.
+The `index.html` page is located in the `coverage` directory, and when you open it, the browser will provide a report on the code coverage. Please check below; it will look like this: 
+
+![code coverage](./coverageReport.png)
