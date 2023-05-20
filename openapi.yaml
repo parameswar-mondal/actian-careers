@@ -1,0 +1,60 @@
+openapi: 3.0.0
+info:
+  title: Actian Open Positions API
+  description: >
+    Actian Careers - Your Take-Home API Project Challenge
+  version: 1.0.0
+  contact:
+    name: HCL Software - Parameswar Mondal
+servers:
+    - url: http://localhost:3000
+      variables: {}
+      description: HTTP
+tags:
+  - name: department
+    description: Open Positions
+paths:
+  /api/open-positions?department={department}:
+    get:
+      summary: Get open positions by department
+      operationId: getDepartmentDetails
+      parameters:
+        - name: department
+          in: query
+          description: Department name
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        '400':
+          description: Bad request
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Not found
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+      tags:
+        - department
+      x-express-middleware:
+        - expressRouter:
+            expressAppPath: ./app.js
+
