@@ -47,3 +47,13 @@ URL: http://localhost:3000/api/open-positions?department={department}
 `http://localhost:3000/api-docs`
 
 ![open api](./swagger.png)
+
+## Integration Tests
+Within the `tests` directory, we wrote the test cases for this application. Below are the scenarios:
+
+- Implemented one positive test case.
+- Implemented three negative test cases.
+### How to run the express server?
+`npm run test`
+
+![integration test](./integration-test.png)

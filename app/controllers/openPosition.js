@@ -5,7 +5,6 @@ const utility = require('../../utility');
 module.exports = {
     async getDepartmentDetails(req, res, next) {
         try {
-            // const department = req.params.department;
             let { department } = req.query;
             if (!department) {
                 return res.status(400).send('Department is required!');
