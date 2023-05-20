@@ -31,30 +31,50 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  type: string
+                $ref: '#/components/schemas/OpenPositionResponse'
         '400':
           description: Bad request
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorResponse'
         '404':
           description: Not found
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorResponse'
         '500':
           description: Internal server error
           content:
             text/plain:
               schema:
-                type: string
+                $ref: '#/components/schemas/ErrorResponse'
       tags:
         - department
       x-express-middleware:
         - expressRouter:
             expressAppPath: ./app.js
-
+components:
+  schemas:
+    OpenPositionResponse:
+      type: object
+      required:
+        - result
+      properties:
+        result:
+          type: array
+          description: The list of open positions
+          example: ['Business Development Representative', 'Sr. Business Analyst']
+    ErrorResponse:
+      type: object
+      required:
+        - success
+        - message
+      properties:
+        success:
+          type: boolean
+          example: false
+        message:
+          type: string
+          description: The reason for the error
