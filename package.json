@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "node ./node_modules/mocha/bin/_mocha \"./tests/openPositions.test.js\"  --timeout 0 --recursive --reporter spec --sort --exit",
+    "coverage": "nyc --show-process-tree node_modules/.bin/mocha tests/*.js --timeout 0 --recursive --reporter spec --sort --exit",
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
@@ -26,6 +27,20 @@
   "devDependencies": {
     "chai": "^4.3.7",
     "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
     "supertest": "^6.3.3"
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "app/**"
+    ],
+    "reporter": [
+      "html",
+      "text"
+    ],
+    "extentions": [
+      ".js"
+    ]
   }
 }
