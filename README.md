@@ -44,7 +44,6 @@ URL: http://localhost:3000/api/open-positions?department={department}
 ## Postman Failed Request:
 ![fail message](./fail.png)
 
-
 ## OpenAPI/Swagger URL
 `http://localhost:3000/api-docs`
 
